@@ -19,10 +19,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .left {
   max-width: 650px;
+  flex: 1;
+  min-width: 300px;
 }
 
 .title-row {
@@ -61,6 +65,7 @@ body {
 .right {
   max-width: 320px;
   margin-top: 10px;
+  flex: 0 1 320px;
 }
 
 .right p {
@@ -76,16 +81,27 @@ body {
   color: #000;
   border-bottom: 1px solid #000;
   padding-bottom: 2px;
+  display: inline-block;
+  padding: 8px 0 2px 0;
+  transition: opacity 0.3s ease;
+}
+
+.link:hover {
+  opacity: 0.7;
 }
 
 .image-section img {
   width: 100%;
-  height: 520px;
+  min-height: 520px;
   object-fit: cover;
   display: block;
 }
 
 @media (max-width: 900px) {
+  .hero {
+    padding: 50px 60px 40px 60px;
+  }
+
   .container {
     flex-direction: column;
     gap: 30px;
@@ -97,5 +113,56 @@ body {
 
   .image-section img {
     height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 40px 30px 40px;
+  }
+
+  .left h1 {
+    font-size: 28px;
+  }
+
+  .right {
+    max-width: 100%;
+  }
+
+  .image-section img {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 20px 20px 20px;
+  }
+
+  .left h1 {
+    font-size: 22px;
+  }
+
+  .title-row {
+    gap: 8px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .right p {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .link {
+    font-size: 13px;
+  }
+
+  .image-section img {
+    height: 200px;
   }
 }
